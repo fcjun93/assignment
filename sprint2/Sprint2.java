@@ -12,9 +12,9 @@ public class Sprint2 {
         Scanner sc = new Scanner(System.in);
         boolean login = false;
 
-        setdetail detail1 = new setdetail("001", "Domino", " ");
-        setdetail detail2 = new setdetail("002", "PizzaHut", " ");
-        setdetail detail3 = new setdetail("003", "McDonarld", " ");
+        setdetail detail1 = new setdetail("001", "Domino", " "," ");
+        setdetail detail2 = new setdetail("002", "PizzaHut", " "," ");
+        setdetail detail3 = new setdetail("003", "McDonarld", " "," ");
 
         detail.add(detail1);
         detail.add(detail2);
@@ -28,7 +28,8 @@ public class Sprint2 {
         
         int num;
         String x;
-
+        String y;
+        
         do {
             for (int i=0; i<tempDetail.size();i++){
             System.out.println("No."+(i+1)+"\n"+tempDetail.get(i));
@@ -38,14 +39,18 @@ public class Sprint2 {
             if (num != 0) {
             setdetail checkid = tempDetail.get(num - 1);
 
-            System.out.println("enter deliveryman name : ");
+            System.out.println("Enter deliveryman name : ");
             x = sc.next();
+            System.out.println("Enter the date: ");
+            y = sc.next();
+            
                 System.out.println("");
             for (int i = 0; i < detail.size(); i++) {
                 setdetail check = detail.get(i);
                 if (checkid.getOrderid().equals(check.getOrderid())) {
                     check.setDname(x);
-                    detail.set(i, check);
+                    check.setDate(y);
+                    detail.set(i, check);          
                 }
             }
 

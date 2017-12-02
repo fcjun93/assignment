@@ -15,23 +15,29 @@ public class setdetail<T> implements setinterface<T> {
     private String orderid;
     private String restaurant;
     private String dname;
+    private String date;
+    
     private boolean check;
- private T[] array;
-    private int size;
-    private final static int MAX_SIZE = 100;
-
-    public setdetail() {
-        array = (T[]) new Object[MAX_SIZE];
-    }
 
 
-    public setdetail( String orderid, String restaurant, String dname) {
+  
+
+
+    public setdetail( String orderid, String restaurant, String dname, String date) {
         
         this.orderid = orderid;
         this.restaurant = restaurant;
         this.dname = dname;
+        this.date=date;
     }
 
+    public String getDate(){
+        return date;
+    }
+    public void setDate(String date){
+        this.date=date;
+    }
+    
     public String getNo() {
         return no;
     }
@@ -79,7 +85,8 @@ public class setdetail<T> implements setinterface<T> {
     public String toString() {
         return "ID: "+ orderid +
                 "\nRestaurant: "+ restaurant+
-                "\nDelivery Man: "+ dname+"\n";
+                "\nDelivery Man: "+ dname+
+                "\nDate: "+date+"\n";
     }
     
     
